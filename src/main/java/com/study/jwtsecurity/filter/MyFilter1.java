@@ -20,7 +20,6 @@ public class MyFilter1 implements Filter {
         //그때 토큰이 넘어오면 이 토큰을 검증한다.(RSA, HS256)
         if(req.getMethod().equals("POST")){
             String authorization = req.getHeader("Authorization");
-            System.out.println(authorization);
             if(authorization.equals("testToken")){
                 filterChain.doFilter(req, res);
             }else{
